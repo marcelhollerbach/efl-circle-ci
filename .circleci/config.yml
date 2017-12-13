@@ -6,12 +6,12 @@ jobs:
     steps:
       - run:
           name: build 
-          command: sh .ci/ci-linux-build.sh
+          command: cd efl && sh .ci/ci-linux-build.sh
       - run:
           name: tests
-          command: make test
+          command: cd efl && make test
            
       - run:
           name: install
-          command: make install
+          command: cd efl && make install
 
