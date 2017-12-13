@@ -7,7 +7,7 @@ jobs:
     steps:
       - run:
           name: pwd 
-          command: echo $PWD
+          command: ls
       - run:
           name: build 
           command: .ci/ci-linux-build.sh
