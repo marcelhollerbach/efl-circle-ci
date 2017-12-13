@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  'ubuntu':
+  build:
     docker:
       - image: bu5hm4n/efl-ready-docker-ubuntu
     steps:
