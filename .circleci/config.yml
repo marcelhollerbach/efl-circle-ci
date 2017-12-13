@@ -1,17 +1,18 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/efl
     docker:
       - image: bu5hm4n/efl-ready-docker-ubuntu
     steps:
       - run:
           name: build 
-          command: cd efl && sh .ci/ci-linux-build.sh
+          command: sh .ci/ci-linux-build.sh
       - run:
           name: tests
-          command: cd efl && make test
+          command: make test
            
       - run:
           name: install
-          command: cd efl && make install
+          command: make install
 
