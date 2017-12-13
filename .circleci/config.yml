@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  "ubuntu":
+  build:
     working_directory: ~/efl
     docker:
       - image: bu5hm4n/efl-ready-docker-ubuntu
@@ -12,23 +12,6 @@ jobs:
       - run:
           name: tests
           command: make check
-           
-      - run:
-          name: install
-          command: make install
-
-  "fedora":
-    working_directory: ~/efl
-    docker:
-      - image: bu5hm4n/efl-ready-docker-fedora
-    steps:
-      - checkout
-      - run:
-          name: build 
-          command: .ci/ci-linux-build.sh
-      - run:
-          name: tests
-          command: make test
            
       - run:
           name: install
