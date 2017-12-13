@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  'ubuntu':
+    docker:
+      - image: bu5hm4n/efl-ready-docker-ubuntu
+    steps:
+      - run:
+          name: build 
+          command: sh .ci/ci-linux-build.sh
+      - run:
+          name: tests
+          command: make test
+           
+      - run:
+          name: install
+          command: make install
+
