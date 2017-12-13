@@ -6,8 +6,11 @@ jobs:
       - image: bu5hm4n/efl-ready-docker-ubuntu
     steps:
       - run:
+          name: pwd 
+          command: echo $PWD
+      - run:
           name: build 
-          command: sh .ci/ci-linux-build.sh
+          command: .ci/ci-linux-build.sh
       - run:
           name: tests
           command: make test
